@@ -15,7 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware(['auth', 'verified']);
+})->middleware(['auth', 'verified'])->name('/');
+
+Route::get('/game', function () {
+    return view('game');
+})->middleware(['auth', 'verified'])->name('game');
+
+Route::get('/statistics', function () {
+    return view('statistics');
+})->middleware(['auth', 'verified'])->name('statistics');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
