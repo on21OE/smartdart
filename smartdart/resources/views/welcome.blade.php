@@ -1,11 +1,10 @@
 <x-app-layout>
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         
         <div class="container">
             <div class="row">
                 <div class="col-12 flex justify-center">
-                    <h2 class="h2" style="color: white">Welcome to DartSmart {{ Auth::user()->name }}</h2>
+                    <h2 class="h2" style="color: white">Welcome to SmartDart {{ Auth::user()->name }}</h2>
                 </div>
             </div>
             <div class="row mb-4">
