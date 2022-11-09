@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\gameController;
+use App\Http\Controllers\GameHistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['auth', 'verified'])->name('/');
+
+Route::get('/game', function () {
+    return view('game');
+})->middleware(['auth', 'verified'])->name('game');
+
+Route::get('/statistics', function () {
+    return view('statistics');
+})->middleware(['auth', 'verified'])->name('statistics');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('game2', [gameController::class, 'create'])->name('game2');
+
+Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->name('gameHistory');
 
 require __DIR__.'/auth.php';
