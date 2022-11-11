@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\gameController;
 use App\Http\Controllers\GameHistoryController;
+use App\Http\Controllers\GameStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,9 @@ Route::get('/dashboard', function () {
 Route::get('game2', [gameController::class, 'create'])->name('game2');
 
 Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->name('gameHistory');
+
+Route::get('gameStats', [GameStatsController::class, 'showStats'])->name('gameStats');
+
+Route::post('addGame', [GameStatsController::class, 'addGame'])->name('addGame');
 
 require __DIR__.'/auth.php';

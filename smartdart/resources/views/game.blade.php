@@ -1,88 +1,145 @@
 <x-app-layout>
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <h1 class="h1 justify-content-center d-flex">Game</h1>
+
         <div class="container">
-            <div class="row">
-                <h1 class="h1" style="color: white">Game</h1>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <table class="table"> 
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Throw 1</th>
+                                <th>Throw 2</th>
+                                <th>Throw 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ Auth::user()->name }}</td>
+                                <td id="throw1"></td>
+                                <td id="throw2"></td>
+                                <td id="throw3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p id="playerName">Name</p>
-                </div>
-                <div class="col">
-                    <p id="count1"></p>
-                </div>
-                <div class="col">
-                    <p id="count2"></p>
-                </div>
-                <div class="col">
-                    <p id="count3"></p>
-                </div>
-            </div>
-            
             <div class="row justify-content-center">
                 <div class="col-1">
                     <button id="1" class="btn btn-primary px-6">1</button>
                 </div>
                 <div class="col-1">
-                    <button id="1" class="btn btn-primary px-6">2</button>
+                    <button id="2" class="btn btn-primary px-6">2</button>
                 </div>
                 <div class="col-1">
-                    <button id="1" class="btn btn-primary px-6">3</button>
+                    <button id="3" class="btn btn-primary px-6">3</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">4</button>
-                    <button id="1" class="btn btn-primary px-4">5</button>
-                    <button id="1" class="btn btn-primary px-4">6</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="4" class="btn btn-primary px-6">4</button>
+                </div>
+                <div class="col-1">
+                    <button id="5" class="btn btn-primary px-6">5</button>
+                </div>
+                <div class="col-1">
+                    <button id="6" class="btn btn-primary px-6">6</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">7</button>
-                    <button id="1" class="btn btn-primary px-4">8</button>
-                    <button id="1" class="btn btn-primary px-4">9</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="7" class="btn btn-primary px-6">7</button>
+                </div>
+                <div class="col-1">
+                    <button id="8" class="btn btn-primary px-6">8</button>
+                </div>
+                <div class="col-1">
+                    <button id="9" class="btn btn-primary px-6">9</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">10</button>
-                    <button id="1" class="btn btn-primary px-4">11</button>
-                    <button id="1" class="btn btn-primary px-4">12</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="10" class="btn btn-primary px-6">10</button>
+                </div>
+                <div class="col-1">
+                    <button id="11" class="btn btn-primary px-6">11</button>
+                </div>
+                <div class="col-1">
+                    <button id="12" class="btn btn-primary px-6">12</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">13</button>
-                    <button id="1" class="btn btn-primary px-4">14</button>
-                    <button id="1" class="btn btn-primary px-4">15</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="13" class="btn btn-primary px-6">13</button>
+                </div>
+                <div class="col-1">
+                    <button id="14" class="btn btn-primary px-6">14</button>
+                </div>
+                <div class="col-1">
+                    <button id="15" class="btn btn-primary px-6">15</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">16</button>
-                    <button id="1" class="btn btn-primary px-4">17</button>
-                    <button id="1" class="btn btn-primary px-4">18</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="16" class="btn btn-primary px-6">16</button>
+                </div>
+                <div class="col-1">
+                    <button id="17" class="btn btn-primary px-6">17</button>
+                </div>
+                <div class="col-1">
+                    <button id="18" class="btn btn-primary px-6">18</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button id="1" class="btn btn-primary px-4">19</button>
-                    <button id="1" class="btn btn-primary px-4">20</button>
-                    <button id="1" class="btn btn-primary px-4">25</button>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="19" class="btn btn-primary px-6">19</button>
+                </div>
+                <div class="col-1">
+                    <button id="20" class="btn btn-primary px-6">20</button>
+                </div>
+                <div class="col-1">
+                    <button id="25" class="btn btn-primary px-6">25</button>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <script>
-        let count1;
-        const count1p = document.querySelector("#count1") 
-
-        document.addEventListener("click", () => {
-            count1 = 5;
-            count1p.innerText = count1;
-        });
-    </script>
 </x-app-layout>
+<script>
+    let throw1;
+    let throw2;
+    let throw3;
+
+    const thrownDarts = 3;
+    const bestScore = 123;
+    const average = 32.4;
+
+    /* $.ajax({
+            url: "{{ route("addGame") }}",
+            type:"POST",
+            data:{
+              thrownDarts: thrownDarts,
+              bestScore: bestScore,
+              average: average
+            },
+            success:function(response){
+              console.log(response);
+              if(response) {
+                $('.success').text(response.success);
+                $("#ajaxform")[0].reset();
+              }
+            },
+            error: function(error) {
+             console.log(error);
+            }
+           }); */
+    
+    const button1 = document.getElementById("1");
+    const throw1Element = document.querySelector("#throw1");
+
+
+   button1.addEventListener("click", () => {
+        throw1 = button1.innerText;
+        throw1Element.innerText = throw1;
+    });
+</script>
