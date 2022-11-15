@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\gameController;
 use App\Http\Controllers\GameHistoryController;
 use App\Http\Controllers\GameStatsController;
+use App\Http\Controllers\UserSettingsController;
+use App\Http\Controllers\AllTimeStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +41,11 @@ Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->name('
 Route::get('gameStats', [GameStatsController::class, 'showStats'])->name('gameStats');
 
 Route::post('addGame', [GameStatsController::class, 'addGame'])->name('addGame');
+
+Route::get('userSettings', [UserSettingsController::class, 'showSettings'])->name('userSettings');
+
+Route::post('changeUserName', [UserSettingsController::class, 'changeUserName'])->name('changeUserName');
+
+Route::get('allTimeStats', [AllTimeStatsController::class, 'showAllTimeStats'])->name('allTimeStats');
 
 require __DIR__.'/auth.php';

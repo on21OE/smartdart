@@ -18,7 +18,7 @@ class GameStatsController extends Controller
         return view('gameStats', compact("data"));
     }
 
-    public function addGame(Request $request) {
+    /*public function addGame(Request $request) {
         $user = Auth::user();
 
         $userId = $user->id;
@@ -32,5 +32,5 @@ class GameStatsController extends Controller
         $newGame->bestScore = $bestScore;
         $newGame->average = $average;
         $newGame->save();
-    }
+    } */
 }
