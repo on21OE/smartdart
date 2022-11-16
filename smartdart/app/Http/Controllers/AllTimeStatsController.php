@@ -22,10 +22,17 @@ class AllTimeStatsController extends Controller
         $bestScore = DB::table("games")->where("userId", "=", $user->id)->max("bestScore");
 
 
+        $totalGamesOtherUser = DB::table("games")->where("userId", "=", 2)->count();
+
+        $thrownDartsOtherUser = DB::table("games")->where("userId", "=", 2)->sum("thrownDarts");
+
+        $averageOtherUser = DB::table("games")->where("userId", "=", 2)->sum("average") / DB::table("games")->where("userId", "=", 2)->count();
+
+        $bestScoreOtherUser = DB::table("games")->where("userId", "=", 2)->max("bestScore");
 
 
         
-        $dataArray = array($totalGames, $thrownDarts, $average, $bestScore);
+        $dataArray = array($totalGames, $thrownDarts, $average, $bestScore, $totalGamesOtherUser, $thrownDartsOtherUser, $averageOtherUser, $bestScoreOtherUser);
 
 
 

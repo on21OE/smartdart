@@ -22,6 +22,24 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('gameHistory')" :active="request()->routeIs('gameHistory')">
+                        {{ __('Game History') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('gameStats')" :active="request()->routeIs('gameStats')">
+                        {{ __('Game Stats') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('allTimeStats')" :active="request()->routeIs('allTimeStats')">
+                        {{ __('All Time Stats') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

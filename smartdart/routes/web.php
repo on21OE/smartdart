@@ -48,4 +48,10 @@ Route::post('changeUserName', [UserSettingsController::class, 'changeUserName'])
 
 Route::get('allTimeStats', [AllTimeStatsController::class, 'showAllTimeStats'])->name('allTimeStats');
 
+Route::get('editHistory/{id}', [GameHistoryController::class, 'editHistory'])->name('editHistory');
+
+Route::post('updateHistory', [GameHistoryController::class, 'updateHistory'])->name('updateHistory');
+
+Route::get('deleteHistory/{id}', [GameHistoryController::class, 'deleteHistory'])->name('deleteHistory');
+
 require __DIR__.'/auth.php';

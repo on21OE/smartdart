@@ -35,10 +35,10 @@
                 </div>
                 <div class="col-3">
                     <p></p>
-                    <p>{{$dataArray[0]}}</p>
-                    <p>{{$dataArray[1]}}</p>
-                    <p>{{$dataArray[2]}}</p>
-                    <p>{{$dataArray[3]}}</p>
+                    <p>{{$dataArray[4]}}</p>
+                    <p>{{$dataArray[5]}}</p>
+                    <p>{{$dataArray[6]}}</p>
+                    <p>{{$dataArray[7]}}</p>
                 </div>
             </div>
         </div>
