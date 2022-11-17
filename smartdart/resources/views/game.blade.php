@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1 class="h1 justify-content-center d-flex">Game</h1>
-
+    <a href="{{url('addGame')}}">Add</a>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -102,6 +102,22 @@
                 </div>
             </div>
         </div>
+        <form id="form" method="post" action="{{url('saveGame')}}" style="display: none">
+            @csrf
+            <div class="col-3">
+                <label class="form-label">thrownDarts</label>
+                <input id="thrownDarts" type="text" class="form-control" name="thrownDarts" placeholder="Thrown Darts">
+            </div>
+            <div class="col-3">
+                <label class="form-label">bestScore</label>
+                <input id="bestScore" type="text" class="form-control" name="bestScore" placeholder="Best Score">
+            </div>
+            <div class="col-3">
+                <label class="form-label">average</label>
+                <input id="average" type="text" class="form-control" name="average" placeholder="Average">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
     </div>
 </x-app-layout>
@@ -113,6 +129,22 @@
     const thrownDarts = 3;
     const bestScore = 123;
     const average = 32.4;
+
+    const thrownDartsInput = document.getElementById("thrownDarts");
+    const bestScoreInput = document.getElementById("bestScore");
+    const averageInput = document.getElementById("average");
+
+    const button1 = document.getElementById("1");
+    const throw1Element = document.querySelector("#throw1");
+
+    button1.addEventListener("click", () => {
+        thrownDartsInput.value = thrownDarts;
+        bestScoreInput.value = bestScore;
+        averageInput.value = average;
+        document.getElementById("form").submit();
+    });
+
+
 
     /* $.ajax({
             url: "{{ route("addGame") }}",
@@ -134,8 +166,7 @@
             }
            }); */
     
-    const button1 = document.getElementById("1");
-    const throw1Element = document.querySelector("#throw1");
+
 
 
    button1.addEventListener("click", () => {

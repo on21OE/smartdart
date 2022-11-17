@@ -18,8 +18,8 @@ class GameStatsController extends Controller
         return view('gameStats', compact("data"));
     }
 
-    /*public function addGame(Request $request) {
-        $user = Auth::user();
+    public function addGame(Request $request) {
+       /*$user = Auth::user();
 
         $userId = $user->id;
         $thrownDarts = $request->input("thrownDarts");
@@ -31,6 +31,24 @@ class GameStatsController extends Controller
         $newGame->thrownDarts = $thrownDarts;
         $newGame->bestScore = $bestScore;
         $newGame->average = $average;
-        $newGame->save();
-    } */
+        $newGame->save(); */
+
+        return view('addGame');
+    }
+
+    public function saveGame(Request $request) {
+        $user = Auth::user();
+        $thrownDarts = $request->thrownDarts;
+        $bestScore = $request->bestScore;
+        $average = $request->average;
+
+        DB::table("games")->insert([
+            "userId" => $user->id,
+            "thrownDarts" => $thrownDarts,
+            "bestScore" => $bestScore,
+            "average" => $average 
+        ]);
+
+        return redirect()->route("gameHistory");
+    }
 }

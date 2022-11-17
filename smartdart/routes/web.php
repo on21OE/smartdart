@@ -40,7 +40,7 @@ Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->name('
 
 Route::get('gameStats', [GameStatsController::class, 'showStats'])->name('gameStats');
 
-Route::post('addGame', [GameStatsController::class, 'addGame'])->name('addGame');
+Route::get('addGame', [GameStatsController::class, 'addGame'])->name('addGame');
 
 Route::get('userSettings', [UserSettingsController::class, 'showSettings'])->name('userSettings');
 
@@ -54,4 +54,5 @@ Route::post('updateHistory', [GameHistoryController::class, 'updateHistory'])->n
 
 Route::get('deleteHistory/{id}', [GameHistoryController::class, 'deleteHistory'])->name('deleteHistory');
 
+Route::post('saveGame', [GameStatsController::class, 'saveGame'])->name('saveGame');
 require __DIR__.'/auth.php';
