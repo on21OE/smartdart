@@ -55,4 +55,7 @@ Route::post('updateHistory', [GameHistoryController::class, 'updateHistory'])->m
 Route::get('deleteHistory/{id}', [GameHistoryController::class, 'deleteHistory'])->middleware(['auth', 'verified'])->name('deleteHistory');
 
 Route::post('saveGame', [GameStatsController::class, 'saveGame'])->middleware(['auth', 'verified'])->name('saveGame');
+
+Route::get('getOtherUserStats', [AllTimeStatsController::class, 'getOtherUserStats'])->middleware(['auth', 'verified'])->name('getOtherUserStats');
+
 require __DIR__.'/auth.php';
