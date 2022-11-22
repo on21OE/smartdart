@@ -34,25 +34,25 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('game2', [gameController::class, 'create'])->name('game2');
+Route::get('game2', [gameController::class, 'create'])->middleware(['auth', 'verified'])->name('game2');
 
-Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->name('gameHistory');
+Route::get('gameHistory', [GameHistoryController::class, 'showHistory'])->middleware(['auth', 'verified'])->name('gameHistory');
 
-Route::get('gameStats', [GameStatsController::class, 'showStats'])->name('gameStats');
+Route::get('gameStats', [GameStatsController::class, 'showStats'])->middleware(['auth', 'verified'])->name('gameStats');
 
-Route::get('addGame', [GameStatsController::class, 'addGame'])->name('addGame');
+Route::get('addGame', [GameStatsController::class, 'addGame'])->middleware(['auth', 'verified'])->name('addGame');
 
-Route::get('userSettings', [UserSettingsController::class, 'showSettings'])->name('userSettings');
+Route::get('userSettings', [UserSettingsController::class, 'showSettings'])->middleware(['auth', 'verified'])->name('userSettings');
 
-Route::post('changeUserName', [UserSettingsController::class, 'changeUserName'])->name('changeUserName');
+Route::post('changeUserName', [UserSettingsController::class, 'changeUserName'])->middleware(['auth', 'verified'])->name('changeUserName');
 
-Route::get('allTimeStats', [AllTimeStatsController::class, 'showAllTimeStats'])->name('allTimeStats');
+Route::get('allTimeStats', [AllTimeStatsController::class, 'showAllTimeStats'])->middleware(['auth', 'verified'])->name('allTimeStats');
 
-Route::get('editHistory/{id}', [GameHistoryController::class, 'editHistory'])->name('editHistory');
+Route::get('editHistory/{id}', [GameHistoryController::class, 'editHistory'])->middleware(['auth', 'verified'])->name('editHistory');
 
-Route::post('updateHistory', [GameHistoryController::class, 'updateHistory'])->name('updateHistory');
+Route::post('updateHistory', [GameHistoryController::class, 'updateHistory'])->middleware(['auth', 'verified'])->name('updateHistory');
 
-Route::get('deleteHistory/{id}', [GameHistoryController::class, 'deleteHistory'])->name('deleteHistory');
+Route::get('deleteHistory/{id}', [GameHistoryController::class, 'deleteHistory'])->middleware(['auth', 'verified'])->name('deleteHistory');
 
-Route::post('saveGame', [GameStatsController::class, 'saveGame'])->name('saveGame');
+Route::post('saveGame', [GameStatsController::class, 'saveGame'])->middleware(['auth', 'verified'])->name('saveGame');
 require __DIR__.'/auth.php';

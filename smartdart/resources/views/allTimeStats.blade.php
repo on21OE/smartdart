@@ -28,7 +28,7 @@
                     <p>{{$dataArray[3]}}</p>
                 </div>
                 <div class="col-3 d-flex flex-column align-items-end">
-                    <p>Total Games</p>                
+                    <p>Total Games</p>             
                     <p>Thrown Darts</p>
                     <p>Thrown Darts</p>
                     <p>Best Score</p>

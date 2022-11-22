@@ -22,87 +22,105 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="table"> 
+                        <thead>
+                            <tr>
+                                <th>Score</th>
+                                <th>Best Score</th>
+                                <th>Thrown Darts</th>
+                                <th>Average</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="scoreElement"></td>
+                                <td id="bestScoreElement"></td>
+                                <td id="thrownDartsElement"></td>
+                                <td id="averageElement"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-1">
-                    <button id="1" class="btn btn-primary px-6">1</button>
+                    <button id="1" class="countButton btn btn-primary px-6">1</button>
                 </div>
                 <div class="col-1">
-                    <button id="2" class="btn btn-primary px-6">2</button>
+                    <button id="2" class="countButton btn btn-primary px-6">2</button>
                 </div>
                 <div class="col-1">
-                    <button id="3" class="btn btn-primary px-6">3</button>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-1">
-                    <button id="4" class="btn btn-primary px-6">4</button>
-                </div>
-                <div class="col-1">
-                    <button id="5" class="btn btn-primary px-6">5</button>
-                </div>
-                <div class="col-1">
-                    <button id="6" class="btn btn-primary px-6">6</button>
+                    <button id="3" class="countButton btn btn-primary px-6">3</button>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-1">
-                    <button id="7" class="btn btn-primary px-6">7</button>
+                    <button id="4" class="countButton btn btn-primary px-6">4</button>
                 </div>
                 <div class="col-1">
-                    <button id="8" class="btn btn-primary px-6">8</button>
+                    <button id="5" class="countButton btn btn-primary px-6">5</button>
                 </div>
                 <div class="col-1">
-                    <button id="9" class="btn btn-primary px-6">9</button>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-1">
-                    <button id="10" class="btn btn-primary px-6">10</button>
-                </div>
-                <div class="col-1">
-                    <button id="11" class="btn btn-primary px-6">11</button>
-                </div>
-                <div class="col-1">
-                    <button id="12" class="btn btn-primary px-6">12</button>
+                    <button id="6" class="countButton btn btn-primary px-6">6</button>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-1">
-                    <button id="13" class="btn btn-primary px-6">13</button>
+                    <button id="7" class="countButton btn btn-primary px-6">7</button>
                 </div>
                 <div class="col-1">
-                    <button id="14" class="btn btn-primary px-6">14</button>
+                    <button id="8" class="countButton btn btn-primary px-6">8</button>
                 </div>
                 <div class="col-1">
-                    <button id="15" class="btn btn-primary px-6">15</button>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-1">
-                    <button id="16" class="btn btn-primary px-6">16</button>
-                </div>
-                <div class="col-1">
-                    <button id="17" class="btn btn-primary px-6">17</button>
-                </div>
-                <div class="col-1">
-                    <button id="18" class="btn btn-primary px-6">18</button>
+                    <button id="9" class="countButton btn btn-primary px-6">9</button>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-1">
-                    <button id="19" class="btn btn-primary px-6">19</button>
+                    <button id="10" class="countButton btn btn-primary px-6">10</button>
                 </div>
                 <div class="col-1">
-                    <button id="20" class="btn btn-primary px-6">20</button>
+                    <button id="11" class="countButton btn btn-primary px-6">11</button>
                 </div>
                 <div class="col-1">
-                    <button id="25" class="btn btn-primary px-6">25</button>
+                    <button id="12" class="countButton btn btn-primary px-6">12</button>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="13" class="countButton btn btn-primary px-6">13</button>
+                </div>
+                <div class="col-1">
+                    <button id="14" class="countButton btn btn-primary px-6">14</button>
+                </div>
+                <div class="col-1">
+                    <button id="15" class="countButton btn btn-primary px-6">15</button>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="16" class="countButton btn btn-primary px-6">16</button>
+                </div>
+                <div class="col-1">
+                    <button id="17" class="countButton btn btn-primary px-6">17</button>
+                </div>
+                <div class="col-1">
+                    <button id="18" class="countButton btn btn-primary px-6">18</button>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-1">
+                    <button id="19" class="countButton btn btn-primary px-6">19</button>
+                </div>
+                <div class="col-1">
+                    <button id="20" class="countButton btn btn-primary px-6">20</button>
+                </div>
+                <div class="col-1">
+                    <button id="25" class="countButton btn btn-primary px-6">25</button>
                 </div>
             </div>
         </div>
-        <form id="form" method="post" action="{{url('saveGame')}}" style="display: none">
+        <form id="form" method="post" action="{{url('saveGame')}}"  style="display: none">
             @csrf
             <div class="col-3">
                 <label class="form-label">thrownDarts</label>
@@ -126,23 +144,109 @@
     let throw2;
     let throw3;
 
-    const thrownDarts = 3;
-    const bestScore = 123;
-    const average = 32.4;
+    let thrownDarts = 0;
+    let bestScore = 0;
+    let bestScoreLastRound;
+    let average;
+    let averageLastRound;
+    let score = 501;
+    let scoreThisRound;
+    let scoreLastRound;
 
     const thrownDartsInput = document.getElementById("thrownDarts");
     const bestScoreInput = document.getElementById("bestScore");
     const averageInput = document.getElementById("average");
 
-    const button1 = document.getElementById("1");
-    const throw1Element = document.querySelector("#throw1");
+    const scoreElement = document.getElementById("scoreElement");
+    const bestScoreElement = document.getElementById("bestScoreElement");
+    const thrownDartsElement = document.getElementById("thrownDartsElement");
+    const averageElement = document.getElementById("averageElement");
 
-    button1.addEventListener("click", () => {
+    const throw1Element = document.querySelector("#throw1");
+    const throw2Element = document.querySelector("#throw2");
+    const throw3Element = document.querySelector("#throw3");
+
+    const countButtons = document.querySelectorAll(".countButton");
+
+    countButtons.forEach((countButton) => {
+        countButton.addEventListener("click", (e) => {
+            console.log(throw1Element.innerText, throw2Element.innerText, throw3Element.innerText)
+            if (throw1Element.innerText === "") {
+                throw1 = parseInt(e.target.innerText);
+                throw1Element.innerText = throw1;
+            } else if (throw2Element.innerText === "") {
+                throw2 = parseInt(e.target.innerText);
+                throw2Element.innerText = throw2;
+            } else if (throw3Element.innerText === "") {
+                throw3 = parseInt(e.target.innerText);
+                throw3Element.innerText = throw3;
+                startRound();
+            } 
+        })
+    })
+
+    function startRound() {
+        thrownDarts = thrownDarts + 3;
+        scoreThisRound = throw1 + throw2 + throw3;
+        scoreLastRound = score;
+        score = score - scoreThisRound;
+        if (scoreThisRound > bestScore) {
+            bestScoreLastRound = bestScore;
+            bestScore = scoreThisRound;
+        }
+        averageLastRound = average;
+        average = (501 - score) / thrownDarts;
+
+        scoreElement.innerText = score;
+        bestScoreElement.innerText = bestScore;
+        thrownDartsElement.innerText = thrownDarts;
+        averageElement.innerText = average;
+
+        throw1Element.innerText = "";
+        throw2Element.innerText = "";
+        throw3Element.innerText = "";
+
+        thrownDartsInput.value = thrownDarts;
+        bestScoreInput.value = bestScore;
+        averageInput.value = average;
+
+        checkIfWon();
+        checkIfOverthrow();
+        
+    }
+
+     function checkIfWon() {
+        if (score === 0) {
+            document.getElementById("form").submit();
+        }
+    }
+
+    function checkIfOverthrow() {
+        if (score < 0) {
+            score = scoreLastRound;
+            average = averageLastRound / thrownDarts;
+            bestScore = bestScoreLastRound;
+
+            throw1Element.innerText = "";
+            throw2Element.innerText = "";
+            throw3Element.innerText = "";
+
+            scoreElement.innerText = score;
+            thrownDartsInput.value = thrownDarts;
+            bestScoreInput.value = bestScore;
+            averageInput.value = average;
+        }
+    }
+
+    /* button1.addEventListener("click", () => {
+        console.log(thrownDarts, bestScore, average);
+        thrownDarts = 5;
+        bestScore = 20;
         thrownDartsInput.value = thrownDarts;
         bestScoreInput.value = bestScore;
         averageInput.value = average;
         document.getElementById("form").submit();
-    });
+    }); */
 
 
 
@@ -169,8 +273,8 @@
 
 
 
-   button1.addEventListener("click", () => {
+   /* button1.addEventListener("click", () => {
         throw1 = button1.innerText;
         throw1Element.innerText = throw1;
-    });
+    }); */
 </script>
