@@ -35,8 +35,6 @@ class AllTimeStatsController extends Controller
 
     public function getOtherUserStats(Request $request) {
 
-        $user = Auth::user();
-
         $userId = DB::table('users')->where('name', '=', $request->name)->value('id');
 
         $totalGamesOtherUser = DB::table("games")->where("userId", "=", $userId)->count();
@@ -53,5 +51,14 @@ class AllTimeStatsController extends Controller
             "average" => $averageOtherUser,
             "bestScore" => $bestScoreOtherUser
         ]);
+    }
+
+    public function editAreStatsPublic(Request $request) {
+        $user = Auth::user();
+        
+        $user->areStatsPublic = $request->value;
+        $user->save();
+
+        return redirect()->route("allTimeStats");
     }
 }

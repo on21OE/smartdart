@@ -16,7 +16,7 @@ class GameHistoryController extends Controller
 
         // $data = GameStatistics::where('userId', '=', 1)->first();
 
-        $data = DB::table("games")->where("userId", "=", $user->id)->get();
+        $data = DB::table("games")->where("userId", "=", $user->id)->orderBy('id', 'desc')->simplePaginate(10);
         
         return view('gameHistory', compact("data"));
     }

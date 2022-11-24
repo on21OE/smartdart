@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container">
+    <div class="container  mt-5">
         <div class="row">
             <div class="col-md-12">
                 <h2 class="h2">Edit History</h2>

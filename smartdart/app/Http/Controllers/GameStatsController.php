@@ -49,6 +49,6 @@ class GameStatsController extends Controller
             "average" => $average 
         ]);
 
-        return redirect()->route("gameHistory");
+        return redirect()->route("gameStats");
     }
 }

@@ -58,4 +58,6 @@ Route::post('saveGame', [GameStatsController::class, 'saveGame'])->middleware(['
 
 Route::get('getOtherUserStats', [AllTimeStatsController::class, 'getOtherUserStats'])->middleware(['auth', 'verified'])->name('getOtherUserStats');
 
+Route::post('editAreStatsPublic', [AllTimeStatsController::class, 'editAreStatsPublic'])->middleware(['auth', 'verified'])->name('editAreStatsPublic');
+
 require __DIR__.'/auth.php';

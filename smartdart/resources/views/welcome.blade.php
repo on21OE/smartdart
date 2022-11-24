@@ -1,25 +1,28 @@
-<x-app-layout>
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        
-        <div class="container">
+<x-app-layout>  
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-12 flex justify-center">
-                    <h2 class="h2" style="color: white">Welcome to SmartDart {{ Auth::user()->name }}</h2>
+                    <h2 class="h2">Welcome to SmartDart {{ Auth::user()->name }}</h2>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-12 flex justify-center">
-                    <h5 class="h5" style="color: white">The only way to play Darts</h5>
+                    <h5 class="h5">The only way to play Darts</h5>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-3 flex justify-center">
-                    <a href="{{ url('/game') }}" class="btn btn-primary">Start Game</a>
-                </div>
-                <div class="col-3 flex justify-center">
-                    <a href="{{ url('/statistics') }}" class="btn btn-primary">Show Statistics</a>
+            <div class="row">
+                <div class="col flex justify-center">
+                    <img src="{{asset('logo/LogoSmartDart.png') }}" width="150px">
                 </div>
             </div>
         </div>
-    </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col flex justify-center">
+                    <a href="{{ url('game') }}" class="btn btn-warning mr-2">Start New Game</a>
+                    <a href="{{ url('gameHistory') }}" class="btn btn-warning mr-2">Your Game History</a>
+                    <a href="{{ url('allTimeStats') }}" class="btn btn-warning mr-2">AllTime Stats</a>
+                </div>
+            </div>
+        </div>
 </x-app-layout>
