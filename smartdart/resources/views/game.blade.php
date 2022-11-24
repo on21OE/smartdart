@@ -122,7 +122,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-12">
-                <table class="table table-striped table-dark table-borderless">
+                <table class="table table-striped table-dark table-borderless text-center">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -140,14 +140,14 @@
                         </tr>
                         <tr>
                             <th>Score</th>
-                            <th>Best Score</th>
                             <th>Thrown Darts</th>
+                            <th>Best Score</th>
                             <th>Average</th>
                         </tr>
                         <tr>
                             <td id="scoreElement">501</td>
-                            <td id="bestScoreElement">0</td>
                             <td id="thrownDartsElement">0</td>
+                            <td id="bestScoreElement">0</td>
                             <td id="averageElement">0</td>
                         </tr>
                     </tbody>
@@ -327,9 +327,7 @@
                 bestScore = scoreThisRound;
             }
         } else {
-            console.log(score);
             score = scoreLastRound;
-            console.log("scoreLastRound", scoreLastRound);
             average = averageLastRound / thrownDarts;
             if (currentRound === 1) {
                 thrownDarts = thrownDarts + 2;
@@ -346,10 +344,8 @@
             bestScoreInput.value = bestScore;
             averageInput.value = average;
         }
-        console.log("score", score);
-
         averageLastRound = average;
-        average = (501 - score) / thrownDarts;
+        average = (501 - score) / thrownDarts * 3 ;
         average = average.toFixed(2);
         if (isLastRound) {
             scoreThisRound = 0;

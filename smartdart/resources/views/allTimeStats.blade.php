@@ -26,9 +26,9 @@
                         <select class="form-control" name="user" id="userSelect">
                             <option value="" selected disabled hidden>Choose User</option>
                             @if (count($dataArray[4]) === 0)
-                            <option disabled>No Users available</option>
+                                <option disabled>No Users available</option>
                             @endif
-                            @foreach ($dataArray[4] as $user)       
+                            @foreach ($dataArray[4] as $user)
                                 <option value={{ $user->name }}>{{ $user->name }}</option>
                             @endforeach
                         </select>
@@ -37,7 +37,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <table class="table table-striped table-dark table-borderless mt-2">
+                    <table class="table table-striped table-dark table-borderless text-center mt-2">
                         <thead>
                             <th>Total Games</th>
                             <th>Thrown Darts</th>
@@ -53,7 +53,7 @@
                     </table>
                 </div>
                 <div class="col-6">
-                    <table class="table table-striped table-dark table-borderless mt-2">
+                    <table class="table table-striped table-dark table-borderless text-center mt-2">
                         <thead>
                             <th>Total Games</th>
                             <th>Thrown Darts</th>
@@ -70,7 +70,8 @@
                 </div>
             </div>
         </div>
-        <p class="mt-5" id="currentSettings"></p>
+        <div class="mx-auto" style="width: 25vw">
+        <p class="mt-4" id="currentSettings"></p>
         <form>
             <select class="form-control" name="user" id="statsSelect">
                 <option value="" selected disabled hidden>Choose here</option>
@@ -78,11 +79,13 @@
                 <option value="1">Hidden</option>
             </select>
         </form>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col flex justify-center">
-                    <a href="{{ url('game') }}" class="btn btn-warning mr-2">Start New Game</a>
-                    <a href="{{ url('gameHistory') }}" class="btn btn-warning mr-2">Your Game History</a>
+        
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col flex justify-center">
+                        <a href="{{ url('game') }}" class="btn btn-warning mr-2">Start New Game</a>
+                        <a href="{{ url('gameHistory') }}" class="btn btn-warning mr-2">Your Game History</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,7 +170,6 @@
     }
 
     function updateCurrentSettings(value) {
-        console.log(value);
         if (value == 0) {
             currentSettings.innerText = "Own Stats currently: Public";
         } else {

@@ -5,10 +5,15 @@
                 <h2 class="h2">Game Stats</h2>
             </div>
         </div>
+        <div class="row">
+            <div class="col flex justify-center">
+                <h4 class="h4">You won!</h4>
+            </div>
+        </div>
     </div>
 
     <div class="mx-auto" style="width: 50vw">
-        <table class="table table-striped table-dark table-borderless mt-5">
+        <table class="table table-striped table-dark text-center mt-4">
             <thead>
                 <th>GameId</th>
                 <th>Thrown Darts</th>

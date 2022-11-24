@@ -16,14 +16,14 @@
         </div>
         <div class="row">
             <div class="col">
-                    <table class="table table-striped table-dark table-borderless"> 
+                    <table class="table table-striped table-dark text-center"> 
                         <thead>
                             <tr>
-                                <th>GameId</th>
+                                <th>Game ID</th>
                                 <th>Thrown Darts</th>
                                 <th>Best Score</th>
                                 <th>Average</th>
-                                <th>Buttons</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>

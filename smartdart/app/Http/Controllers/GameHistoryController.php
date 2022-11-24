@@ -25,7 +25,7 @@ class GameHistoryController extends Controller
         $request->validate([
             "thrownDarts" => "required|integer",
             "bestScore" => "required|integer|lte:180",
-            "average" => "required|numeric|lte:125"
+            "average" => "required|numeric|lte:167"
         ]);
         
         $id = $request->id;

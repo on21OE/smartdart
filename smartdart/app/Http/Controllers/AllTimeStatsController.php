@@ -12,17 +12,24 @@ class AllTimeStatsController extends Controller
     public function showAllTimeStats() {
         $user = Auth::user();
 
-        // $data = GameStatistics::where('userId', '=', 1)->first();
+        $totalGames = 0;
 
-        $totalGames = Game::where("userId", "=", $user->id)->count();
+        $thrownDarts = 0;
 
-        $thrownDarts =  Game::where("userId", "=", $user->id)->sum("thrownDarts");
+        $average = 0;
 
-        $average =  Game::where("userId", "=", $user->id)->sum("average") /Game::where("userId", "=", $user->id)->count();
+        $bestScore = 0;
+        if(Game::where("userId", "=", $user->id)->count() !== 0) {
+            $totalGames = Game::where("userId", "=", $user->id)->count();
 
-        $bestScore =  Game::where("userId", "=", $user->id)->max("bestScore");
+            $thrownDarts =  Game::where("userId", "=", $user->id)->sum("thrownDarts");
 
+            $average =  Game::where("userId", "=", $user->id)->sum("average") / Game::where("userId", "=", $user->id)->count();
 
+            $bestScore =  Game::where("userId", "=", $user->id)->max("bestScore");
+
+        }
+        
         $users = User::whereNot('name', '=', $user->name)->where('areStatsPublic', '=', 0)->get();
 
         $dataArray = array($totalGames, $thrownDarts, $average, $bestScore, $users);

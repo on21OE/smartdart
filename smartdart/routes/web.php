@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('/');
 
+Route::get('/dashboard', function () {
+    return redirect('/');
+})->middleware(['auth', 'verified']);
+
 Route::get('/game', function () {
     return view('game');
 })->middleware(['auth', 'verified'])->name('game');
