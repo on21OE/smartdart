@@ -2,13 +2,13 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col flex justify-center">
-                <h2 class="h2">Your Games</h2>
+                <h2 class="h2 mb-5">Your Games</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-4 flex justify-center">
             @if(Session::has('success'))
-            <div class="card">
-                <div class="card-body"> 
+            <div class="card text-center border-warning" style="width: 25vw">
+                <div class="card-body border-warning"> 
                     {{Session::get('success')}}
                 </div>
             </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col">
-                    <table class="table table-striped table-dark table-borderless mt-5"> 
+                    <table class="table table-striped table-dark table-borderless"> 
                         <thead>
                             <tr>
                                 <th>GameId</th>

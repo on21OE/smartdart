@@ -75,8 +75,18 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('game')" :active="request()->routeIs('game')">
+                {{ __('Game') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('gameHistory')" :active="request()->routeIs('gameHistory')">
+                {{ __('Game History') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('allTimeStats')" :active="request()->routeIs('allTimeStats')">
+                {{ __('All Time Stats') }}
             </x-responsive-nav-link>
         </div>
 

@@ -155,41 +155,40 @@
             </div>
         </div>
         <div class="con">
-        <div class="parent">
-            <div class="div1"> <button id="double" class="btn btn-warning px-6">Double</button> </div>
-            <div class="div2"> <button id="triple" class="btn btn-warning px-6">Triple</button> </div>
-            <div class="div3"> <button id="1" class="countButton btn btn-warning px-6">1</button> </div>
-            <div class="div4"> <button id="2" class="countButton btn btn-warning px-6">2</button></div>
-            <div class="div5"> <button id="3" class="countButton btn btn-warning px-6">3</button> </div>
-            <div class="div6"> <button id="4" class="countButton btn btn-warning px-6">4</button> </div>
-            <div class="div7"> <button id="5" class="countButton btn btn-warning px-6">5</button> </div>
-            <div class="div8"> <button id="6" class="countButton btn btn-warning px-6">6</button></div>
-            <div class="div9"> <button id="7" class="countButton btn btn-warning px-6">7</button></div>
-            <div class="div10"> <button id="8" class="countButton btn btn-warning px-6">8</button></div>
-            <div class="div11"> <button id="9" class="countButton btn btn-warning px-6">9</button> </div>
-            <div class="div12"> <button id="10" class="countButton btn btn-warning px-6">10</button></div>
-            <div class="div13"> <button id="11" class="countButton btn btn-warning px-6">11</button> </div>
-            <div class="div14"> <button id="12" class="countButton btn btn-warning px-6">12</button></div>
-            <div class="div15"> <button id="13" class="countButton btn btn-warning px-6">13</button> </div>
-            <div class="div16"> <button id="14" class="countButton btn btn-warning px-6">14</button> </div>
-            <div class="div17"> <button id="15" class="countButton btn btn-warning px-6">15</button> </div>
-            <div class="div18"> <button id="16" class="countButton btn btn-warning px-6">16</button> </div>
-            <div class="div19"> <button id="17" class="countButton btn btn-warning px-6">17</button></div>
-            <div class="div20"> <button id="18" class="countButton btn btn-warning px-6">18</button></div>
-            <div class="div21"> <button id="19" class="countButton btn btn-warning px-6">19</button></div>
-            <div class="div22"> <button id="20" class="countButton btn btn-warning px-6">20</button></div>
-            <div class="div23"> <button id="25" class="countButton btn btn-warning px-6">25</button></div>
-            <div class="div24"> <button id="0" class="countButton btn btn-warning px-6">0</button></div>
-            <div class="div25"> </div>
+            <div class="parent">
+                <div class="div1"> <button id="double" class="btn btn-warning px-6">Double</button> </div>
+                <div class="div2"> <button id="triple" class="btn btn-warning px-6">Triple</button> </div>
+                <div class="div3"> <button id="1" class="countButton btn btn-warning px-6">1</button> </div>
+                <div class="div4"> <button id="2" class="countButton btn btn-warning px-6">2</button></div>
+                <div class="div5"> <button id="3" class="countButton btn btn-warning px-6">3</button> </div>
+                <div class="div6"> <button id="4" class="countButton btn btn-warning px-6">4</button> </div>
+                <div class="div7"> <button id="5" class="countButton btn btn-warning px-6">5</button> </div>
+                <div class="div8"> <button id="6" class="countButton btn btn-warning px-6">6</button></div>
+                <div class="div9"> <button id="7" class="countButton btn btn-warning px-6">7</button></div>
+                <div class="div10"> <button id="8" class="countButton btn btn-warning px-6">8</button></div>
+                <div class="div11"> <button id="9" class="countButton btn btn-warning px-6">9</button> </div>
+                <div class="div12"> <button id="10" class="countButton btn btn-warning px-6">10</button></div>
+                <div class="div13"> <button id="11" class="countButton btn btn-warning px-6">11</button> </div>
+                <div class="div14"> <button id="12" class="countButton btn btn-warning px-6">12</button></div>
+                <div class="div15"> <button id="13" class="countButton btn btn-warning px-6">13</button> </div>
+                <div class="div16"> <button id="14" class="countButton btn btn-warning px-6">14</button> </div>
+                <div class="div17"> <button id="15" class="countButton btn btn-warning px-6">15</button> </div>
+                <div class="div18"> <button id="16" class="countButton btn btn-warning px-6">16</button> </div>
+                <div class="div19"> <button id="17" class="countButton btn btn-warning px-6">17</button></div>
+                <div class="div20"> <button id="18" class="countButton btn btn-warning px-6">18</button></div>
+                <div class="div21"> <button id="19" class="countButton btn btn-warning px-6">19</button></div>
+                <div class="div22"> <button id="20" class="countButton btn btn-warning px-6">20</button></div>
+                <div class="div23"> <button id="25" class="countButton btn btn-warning px-6">25</button></div>
+                <div class="div24"> <button id="0" class="countButton btn btn-warning px-6">0</button></div>
+                <div class="div25"> </div>
+            </div>
         </div>
-    </div>
     </div>
     <form id="form" method="post" action="{{ url('saveGame') }}" style="display: none">
         @csrf
         <div class="col-3">
             <label class="form-label">thrownDarts</label>
-            <input id="thrownDarts" type="text" class="form-control" name="thrownDarts"
-                placeholder="Thrown Darts">
+            <input id="thrownDarts" type="text" class="form-control" name="thrownDarts" placeholder="Thrown Darts">
         </div>
         <div class="col-3">
             <label class="form-label">bestScore</label>
@@ -384,9 +383,7 @@
 
     function checkIfOverthrow() {
         if (score < 0) {
-            console.log(score);
             score = scoreLastRound;
-            console.log("scoreLastRound", scoreLastRound);
             average = averageLastRound / thrownDarts;
             bestScore = bestScoreLastRound;
 
@@ -410,77 +407,4 @@
         $("#triple").removeClass("btn-dark");
         $("#triple").addClass("btn-warning");
     }
-
-    /* function startRound() {
-        thrownDarts = thrownDarts + 3;
-        scoreThisRound = throw1 + throw2 + throw3;
-        scoreLastRound = score;
-        score = score - scoreThisRound;
-        if (scoreThisRound > bestScore) {
-            bestScoreLastRound = bestScore;
-            bestScore = scoreThisRound;
-        }
-        averageLastRound = average;
-        average = (501 - score) / thrownDarts;
-        average = average.toFixed(2);
-
-        scoreElement.innerText = score;
-        bestScoreElement.innerText = bestScore;
-        thrownDartsElement.innerText = thrownDarts;
-        averageElement.innerText = average;
-
-        throw1Element.innerText = "";
-        throw2Element.innerText = "";
-        throw3Element.innerText = "";
-
-        thrownDartsInput.value = thrownDarts;
-        bestScoreInput.value = bestScore;
-        averageInput.value = average;
-
-        checkIfWon();
-        checkIfOverthrow();
-        
-    } */
-
-
-
-    /* button1.addEventListener("click", () => {
-        console.log(thrownDarts, bestScore, average);
-        thrownDarts = 5;
-        bestScore = 20;
-        thrownDartsInput.value = thrownDarts;
-        bestScoreInput.value = bestScore;
-        averageInput.value = average;
-        document.getElementById("form").submit();
-    }); */
-
-
-
-    /* $.ajax({
-            url: "{{ route('addGame') }}",
-            type:"POST",
-            data:{
-              thrownDarts: thrownDarts,
-              bestScore: bestScore,
-              average: average
-            },
-            success:function(response){
-              console.log(response);
-              if(response) {
-                $('.success').text(response.success);
-                $("#ajaxform")[0].reset();
-              }
-            },
-            error: function(error) {
-             console.log(error);
-            }
-           }); */
-
-
-
-
-    /* button1.addEventListener("click", () => {
-         throw1 = button1.innerText;
-         throw1Element.innerText = throw1;
-     }); */
 </script>

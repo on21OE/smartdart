@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GameHistory;
+use App\Models\Game;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Request;
 
 class GameHistoryController extends Controller
 {
     public function showHistory() {
-        // $data = GameStatistics::get();
-
         $user = Auth::user();
 
-        // $data = GameStatistics::where('userId', '=', 1)->first();
-
-        $data = DB::table("games")->where("userId", "=", $user->id)->orderBy('id', 'desc')->simplePaginate(10);
+        $data = Game::where("userId", "=", $user->id)->orderBy('id', 'desc')->simplePaginate(10);
         
         return view('gameHistory', compact("data"));
     }
 
     public function editHistory($id) {
-        $data = DB::table("games")->where("id", "=", $id)->first();
+        $data = Game::where("id", "=", $id)->first();
         return view('editHistory', compact("data"));
     }
 
@@ -38,7 +33,7 @@ class GameHistoryController extends Controller
         $bestScore = $request->bestScore;
         $average = $request->average;
 
-        DB::table("games")->where('id', '=', $id)->update([
+        Game::where('id', '=', $id)->update([
             'thrownDarts' => $thrownDarts,
             'bestScore' => $bestScore,
             'average' => $average,
@@ -48,7 +43,7 @@ class GameHistoryController extends Controller
     }
 
     public function deleteHistory($id) {
-        DB::table("games")->where('id', '=', $id)->delete();
+        Game::where('id', '=', $id)->delete();
         return redirect()->route("gameHistory")->with("success", "Game Deleted Successfully");
     }
 }

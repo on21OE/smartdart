@@ -3,6 +3,7 @@
         background-color: #ffc107 !important;
         border-color: #ffc107 !important;
     }
+
     select option {
         background: #212529;
         color: #fff;
@@ -12,7 +13,7 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col flex justify-center">
-                <h2 class="h2">Game Stats</h2>
+                <h2 class="h2">All Time Stats</h2>
             </div>
         </div>
     </div>
@@ -24,7 +25,10 @@
                     <form>
                         <select class="form-control" name="user" id="userSelect">
                             <option value="" selected disabled hidden>Choose User</option>
-                            @foreach ($dataArray[4] as $user)
+                            @if (count($dataArray[4]) === 0)
+                            <option disabled>No Users available</option>
+                            @endif
+                            @foreach ($dataArray[4] as $user)       
                                 <option value={{ $user->name }}>{{ $user->name }}</option>
                             @endforeach
                         </select>
@@ -43,7 +47,7 @@
                         <tbody>
                             <td>{{ $dataArray[0] }}</td>
                             <td>{{ $dataArray[1] }}</td>
-                            <td>{{ $dataArray[2] }}</td>
+                            <td id="ownAverage"></td>
                             <td>{{ $dataArray[3] }}</td>
                         </tbody>
                     </table>
@@ -59,13 +63,21 @@
                         <tbody>
                             <td id="totalGames">0</td>
                             <td id="thrownDarts">0</td>
-                            <td id="average">0</td>
+                            <td id="average">0.00</td>
                             <td id="bestScore">0</td>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <p class="mt-5" id="currentSettings"></p>
+        <form>
+            <select class="form-control" name="user" id="statsSelect">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="0">Public</option>
+                <option value="1">Hidden</option>
+            </select>
+        </form>
         <div class="container mt-5">
             <div class="row">
                 <div class="col flex justify-center">
@@ -74,14 +86,6 @@
                 </div>
             </div>
         </div>
-        <!-- <p>Own Stats currently: {{ Auth::user()->areStatsPublic }}</p>
-        <form>
-            <select class="form-control" name="user" id="statsSelect">
-                <option value="" selected disabled hidden>Choose here</option>
-                <option value="0">True</option>
-                <option value="1">False</option>
-            </select>
-        </form> -->
     </div>
 </x-app-layout>
 <script>
@@ -91,13 +95,30 @@
     const averageOther = document.getElementById("average");
     const bestScoreOther = document.getElementById("bestScore");
     const statsSelector = document.getElementById("statsSelect");
+    const currentSettings = document.getElementById("currentSettings");
+    const ownAverage = document.getElementById("ownAverage");
+
+    showSettings();
+    roundOwnAverage()
+
+    function roundOwnAverage() {
+        unroundedAverage = {{ $dataArray[2] }};
+        ownAverage.innerText = unroundedAverage.toFixed(2);
+    }
+
+    function showSettings() {
+        if ({{ Auth::user()->areStatsPublic }} === 0) {
+            currentSettings.innerText = "Own Stats currently: Public";
+        } else {
+            currentSettings.innerText = "Own Stats currently: Hidden";
+        }
+    }
 
     userSelector.addEventListener('change', (e) => {
         getUserStats(e.target.value);
     });
 
     function getUserStats(name) {
-        console.log(name);
         $.ajax({
             type: "GET",
             url: 'getOtherUserStats',
@@ -116,16 +137,20 @@
     function updateOtherUserStats(stats) {
         totalGamesOther.innerText = stats.totalGames;
         thrownDartsOther.innerText = stats.thrownDarts;
-        averageOther.innerText = stats.average;
+        averageOther.innerText = stats.average.toFixed(2);
         bestScoreOther.innerText = stats.bestScore;
     }
 
-    /* statsSelector.addEventListener('change', (e) => {
+    statsSelector.addEventListener('change', (e) => {
         setUserStats(e.target.value);
     });
 
     function setUserStats(value) {
-        console.log(value);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $.ajax({
             type: "POST",
             url: 'editAreStatsPublic',
@@ -133,11 +158,20 @@
                 value: value
             },
             success: function(response) {
-                console.log(geht);
+                updateCurrentSettings(value);
             },
             error: function(err) {
                 console.log(err);
             }
         })
-    } */
+    }
+
+    function updateCurrentSettings(value) {
+        console.log(value);
+        if (value == 0) {
+            currentSettings.innerText = "Own Stats currently: Public";
+        } else {
+            currentSettings.innerText = "Own Stats currently: Hidden";
+        }
+    }
 </script>
