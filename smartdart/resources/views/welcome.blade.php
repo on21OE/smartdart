@@ -22,7 +22,7 @@
                 <div class="col flex justify-center">
                     <a href="{{ url('game') }}" class="btn btn-warning mr-2">Start New Game</a>
                     <a href="{{ url('gameHistory') }}" class="btn btn-warning mr-2">Your Game History</a>
-                    <a href="{{ url('allTimeStats') }}" class="btn btn-warning mr-2">AllTime Stats</a>
+                    <a href="{{ url('allTimeStats') }}" class="btn btn-warning mr-2">All Time Stats</a>
                 </div>
             </div>
         </div>
